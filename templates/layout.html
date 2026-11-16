@@ -1,0 +1,20 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <title>FastAPI Blog</title> -->
+      {% if title %}
+    FastAPI Blog - {{ title }}
+  {% else %}
+    FastAPI Blog
+  {% endif %}
+</head>
+<body>
+  <nav><!-- Navbar links --></nav>
+
+  <main>
+    {% block content %}
+    {% endblock content %}
+  </main>
+</body>
+</html>
