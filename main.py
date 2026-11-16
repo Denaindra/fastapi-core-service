@@ -25,16 +25,12 @@ posts: list[dict] = [
 
 # html response services
 
-@app.get("/",include_in_schema=False)
-@app.get("/posts", include_in_schema=False)
+@app.get("/",include_in_schema=False, name="home")
+@app.get("/posts", include_in_schema=False, name="posts")
 def get_results(request:Request):
     return templates.TemplateResponse(request,"home.html",{"posts":posts, "title":"Fast api by python"})
 
 #end html response services
-
-@app.get("/")
-def read_root():
-    return {"Hello":"World"}
 
 @app.get("/api/posts")
 def get_post():
